@@ -1,4 +1,4 @@
-let musicLibrary = { 
+/* let musicLibrary = { 
     count: 2, 
     artists: [ 
     { 
@@ -138,4 +138,87 @@ console.log(
     durationTime,
     titleMoney,
     durationMoney
-)
+) */
+
+
+
+let bankAccount ={ 
+  ownerName: "me", 
+  accountNumber: "122", 
+  balance: 1000, 
+  deposit(amount) { 
+      this.balance += amount; 
+      console.log(`${this.balance}`); 
+  }, 
+  withdraw(amount){ 
+      if (isNaN(amount) || amount <= 0) { 
+          console.log("incorrect") 
+      } 
+      else if(amount > this.amount){ 
+          console.log("Not enought") 
+      } 
+      else{ 
+          this.balance -= amount; 
+          console.log("Money is took") 
+      } 
+  } 
+  } 
+  function makeDeposit(amount) { 
+  bankAccount.deposit(amount) 
+  } 
+  function makeWithdrawal(amount) { 
+  bankAccount.withdraw(amount) 
+  } 
+  let depositAmount = 200 
+  let withdrawAmount = 100 
+  makeDeposit(depositAmount) 
+  makeWithdrawal(withdrawAmount)
+  
+  
+  
+  let movie = {
+      title: "Fast and Furious",
+      director: "Vin Diesel",
+      year: 2020,
+      rating: 9,
+      findRatingMovie(){
+          if(rating >= 8){
+              console.log(true)
+          }
+          else{
+              console.log(false)
+          }
+      }
+  }
+  
+  let{title, director, year, rating, findRatingMovie} = movie
+  
+  findRatingMovie()
+  
+  
+  
+  let inputWeather = document.querySelector(".weather-temperature")
+  
+  let inputWeatherValue = inputWeather.value
+  
+  let weather = {
+      temperature: inputWeatherValue,
+      humidity: 15,
+      windSpeed: 20,
+      findTemperatureWeather(){
+          if(temperature <= 0){
+              console.log(true)
+          }
+          else{
+              false
+          }
+      }
+  }
+  
+  let{temperature, humidity, windSpeed, findTemperatureWeather} = weather
+  
+  findTemperatureWeather()
+  
+  if(findTemperatureWeather() === true){
+      console.log("Температура нижче 0 градусів Цельсія")
+  }
